@@ -20,7 +20,7 @@ class Login extends React.Component {
     }, () => {
       const { password, emailUser } = this.state;
       const seis = 6;
-      // peguei no site:https://pt.stackoverflow.com/questions/1386/express%C3%A3o-regular-para-valida%C3%A7%C3%A3o-de-e-mail
+      // peguei o regex no site:https://pt.stackoverflow.com/questions/1386/express%C3%A3o-regular-para-valida%C3%A7%C3%A3o-de-e-mail
       const validacaoEmail = /^[\w+.]+@\w+\.\w{2,}(?:\.\w{2})?$/.test(emailUser);
       if (password.length >= seis && validacaoEmail === true) {
         this.setState({ isDesabeledButton: false });
