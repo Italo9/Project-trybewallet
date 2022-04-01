@@ -21,7 +21,7 @@ export const thunkGetSigla = () => async (dispatch) => {
     const objetoMoeda = await getSigla();
     const arrayCurrencies = Object.keys(objetoMoeda);
     const arrayCurrenciesFilter = arrayCurrencies.filter((element) => element !== 'USDT');
-    console.log(arrayCurrenciesFilter);
+    // console.log(arrayCurrenciesFilter);
     dispatch(addWallatExpenses(arrayCurrenciesFilter));
   } catch (error) {
     dispatch(addWallatExpensesFail(error));
