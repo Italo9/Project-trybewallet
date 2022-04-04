@@ -26,13 +26,16 @@ export const addWallatExpensesFail = (value) => ({
   value,
 });
 
+export const removeWallatExpenses = (value) => ({
+  type: 'REMOVE_WALLET_EXPENSES',
+  value,
+});
+
 export const thunkGetSigla = () => async (dispatch) => {
   try {
     const objetoMoeda = await getSigla();
-    // console.log(objetoMoeda);
     const arrayCurrencies = Object.keys(objetoMoeda);
     const arrayCurrenciesFilter = arrayCurrencies.filter((element) => element !== 'USDT');
-    // console.log(arrayCurrenciesFilter);
     dispatch(addWallatCurrencies(arrayCurrenciesFilter));
   } catch (error) {
     dispatch(addWallatExpensesFail(error));
@@ -45,7 +48,6 @@ export const thunkGetGastos = (state) => async (dispatch) => {
     const objetoMoeda = await getSigla();
     delete objetoMoeda.USDT;
     objetoState.exchangeRates = objetoMoeda;
-    // console.log(objetoState);
     dispatch(addWallatExpenses(objetoState));
   } catch (error) {
     dispatch(addWallatCurrenciesFail(error));

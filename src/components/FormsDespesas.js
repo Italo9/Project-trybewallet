@@ -23,7 +23,6 @@ class FormsDespesas extends Component {
     this.setState({
       [name]: value,
     });
-    // console.log(this.state);
   };
 
   handleClick = () => {
@@ -36,18 +35,14 @@ class FormsDespesas extends Component {
     } this.setState({
       id: id + 1,
     });
-    // console.log(this.state);
     value(this.state);
-    // funcao();
     this.setState({
       value: '0',
       description: '' });
-    // console.log(this.state);
   };
 
   render() {
     const { currencies } = this.props;
-    // console.log(currencies);
     const { value, description } = this.state;
     const pagamento = [
       'Dinheiro',
@@ -131,7 +126,6 @@ const mapDispatchToProps = (dispatch) => ({
 
 FormsDespesas.propTypes = {
   currencies: PropTypes.array,
-  // funcao: PropTypes.func,
 }.isRequired;
 
 export default connect(mapStateToProps, mapDispatchToProps)(FormsDespesas);
