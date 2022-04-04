@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { thunkGetSigla } from '../actions';
 import Header from '../components/Header';
 import FormsDespesas from '../components/FormsDespesas';
+import TabelaDespesas from '../components/TabelaDespesas';
 
 class Wallet extends React.Component {
   componentDidMount() {
@@ -16,6 +17,7 @@ class Wallet extends React.Component {
       <div>
         <Header />
         <FormsDespesas />
+        <TabelaDespesas />
       </div>
     );
   }
