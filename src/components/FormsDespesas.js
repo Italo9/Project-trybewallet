@@ -38,6 +38,7 @@ class FormsDespesas extends Component {
     });
     // console.log(this.state);
     value(this.state);
+    // funcao();
     this.setState({
       value: '0',
       description: '' });
@@ -121,6 +122,7 @@ class FormsDespesas extends Component {
 
 const mapStateToProps = (state) => ({
   currencies: state.wallet.currencies,
+  funcao: state.wallet.funcao,
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -129,6 +131,7 @@ const mapDispatchToProps = (dispatch) => ({
 
 FormsDespesas.propTypes = {
   currencies: PropTypes.array,
+  // funcao: PropTypes.func,
 }.isRequired;
 
 export default connect(mapStateToProps, mapDispatchToProps)(FormsDespesas);

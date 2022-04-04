@@ -6,10 +6,10 @@ class Header extends Component {
   somatorio = () => {
     const { expenses } = this.props;
     const filtraElemento = expenses.map((element) => element);
-    const somatorio = filtraElemento
+    const soma = filtraElemento
       .reduce((acc, elemen) => acc + (elemen.value * (Object.values(elemen.exchangeRates)
         .find((elementoMoeda) => elemen.currency === elementoMoeda.code).ask)), 0);
-    return somatorio.toFixed(2);
+    return soma.toFixed(2);
   }
 
   render() {
@@ -34,6 +34,7 @@ const mapStateToProps = (state) => ({
 
 Header.propTypes = {
   email: PropTypes.string,
+  expenses: PropTypes.object,
 }.isRequired;
 
 export default connect(mapStateToProps)(Header);
