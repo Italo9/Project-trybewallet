@@ -13,7 +13,7 @@ class Select extends Component {
       dataTestid,
     } = this.props;
     return (
-      <label htmlFor={ name }>
+      <label htmlFor={ id }>
         { label }
         <select
           data-testid={ dataTestid }
